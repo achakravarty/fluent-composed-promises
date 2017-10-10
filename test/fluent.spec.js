@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const { fluentable, compose } = require('../src/fluent');
+const { fluentable, compose } = require('../src');
 
 describe('Fluent Spec', () => {
   it('should be able to chain functions', async () => {
