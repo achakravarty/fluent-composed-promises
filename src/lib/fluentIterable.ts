@@ -1,7 +1,7 @@
-function FluentIterable(fnArray) {
+function FluentIterable(iterableFunctions) {
   function* getFunctions() {
-    for (let i = 0; i < fnArray.length; i += 1) {
-      yield fnArray[i];
+    for (let i = 0; i < iterableFunctions.length; i += 1) {
+      yield iterableFunctions[i];
     }
   }
   const functions = getFunctions();
@@ -14,4 +14,4 @@ function FluentIterable(fnArray) {
   };
 }
 
-module.exports = FluentIterable;
+export default FluentIterable;

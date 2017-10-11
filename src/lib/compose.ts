@@ -1,5 +1,5 @@
-const Fluent = require('./fluent');
-const FluentIterable = require('./fluentIterable');
+import Fluent from './fluent';
+import FluentIterable from './fluentIterable';
 
 const compose = (...args) => {
   const iterable = new FluentIterable(args);
@@ -11,7 +11,7 @@ const compose = (...args) => {
       } else {
         fnToExecute = fn;
       }
-      return Promise.resolve(fnToExecute.execute(acc)).then((result) => {
+      return Promise.resolve(fnToExecute.execute(acc)).then(result => {
         const values = { ...acc };
         values[fnToExecute.returnType] = result;
         return values;
@@ -21,4 +21,4 @@ const compose = (...args) => {
     .catch(err => err);
 };
 
-module.exports = compose;
+export default compose;
